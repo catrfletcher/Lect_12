@@ -1,0 +1,30 @@
+#!/usr/local/bin/python3
+
+###### NEED TO GET RID OF THE SEQUENCES LESS THAN 30
+
+import subprocess
+
+window_size=30
+window_offset=3
+
+dna_seq=open("remote_exons1.fasta").read().split()[1]
+
+window_list = list(range(0,len(dna_seq),window_offset))
+
+all_segments = ""
+for i in window_list:
+	end=i+window_size
+	segment=dna_seq[i:end]
+	all_segments+=segment+"\n"
+#	print(segment)
+#count GC content
+	GCcontent = (segment.count('G') + segment.count('C')) / len(segment) *100
+#	print(GCcontent)
+#output to individual files
+#	each_filename = "AJ223353_" + str(i) + "to" + str(end) +".fastr"
+#	with open(each_filename, "w") as outfile:
+#		outfile.write(">" + each_filename[:-6] + "\n" + segment + "\n")
+
+#write all segments into one file
+with open("all_segments.txt", "w") as segments:
+	segments.write(all_segments)

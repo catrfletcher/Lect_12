@@ -1,0 +1,34 @@
+#!/usr/local/bin/python3
+
+dna_seq = open("xae.dna").read().upper().rsplit()
+
+count=0
+for line in dna_seq:
+	count=count+1
+	if len(line) >=100 and len(line) <= 199:
+		with open("xae_100to199", "w") as first:
+			first.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 200 and len(line) <= 299:
+		with open("xae_200to299", "w") as second:
+			second.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 300 and len(line) <= 399:
+		with open("xae_300to399", "w") as third:
+			third.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 400 and len(line) <= 499:
+		with open("xae_400to499", "w") as fourth:
+			fourth.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 500 and len(line) <= 599:
+		with open("xae_500to599", "w") as fifth:
+			fifth.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 600 and len(line) <= 699:
+		with open("xae_600to699", "w") as sixth:
+			sixth.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 700 and len(line) <= 799:
+		with open("xae_700to799", "w") as seventh:
+			seventh.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 800 and len(line) <= 899:
+		with open("xae_800to899", "w") as eighth:
+			eighth.write(">xae sequence number " + str(count) + "\n" + line + "\n")
+	elif len(line) >= 900 and len(line) <= 999:
+		with open("xae_900to999", "w") as ninth:
+			ninth.write(">xae sequence number " + str(count) + "\n" + line + "\n")

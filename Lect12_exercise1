@@ -1,0 +1,14 @@
+#!/usr/local/bin/python3
+
+import os
+import sys
+import subprocess
+
+#subprocess.call("cp /localdisk/data/BPSM/Lecture12/input.txt .", shell=True)
+#os.path.exists('input.txt')
+
+with open("clean_seqs.txt", "w") as outfile:
+	with open("input.txt") as input:
+		for line in input:
+			outfile.write(line[14:])
+			print(len(line))

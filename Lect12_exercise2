@@ -1,0 +1,13 @@
+#!/usr/local/bin/python3
+
+genomic = open('genomic_dna2.txt').read().upper()
+
+allexons=""
+for exon in open('exons.txt'):
+	start=int(exon.split(",")[0])-1
+	stop=int(exon.split(",")[1])
+	exonwanted=genomic[start:stop]
+	allexons+=exonwanted
+
+with open("all_exons.txt", "w") as newfile:
+	newfile.write(allexons + "\n")
